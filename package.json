@@ -1,0 +1,28 @@
+{
+  "name": "calibration-box",
+  "version": "0.1.0",
+  "description": "calibrationbox.js is a plugin of Fabric.js",
+  "main": "index.js",
+  "dependencies": {
+    "fabric": "^1.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TingGe/calibration-box.git"
+  },
+  "keywords": [
+    "calibration",
+    "Fabric.js",
+    "plugin"
+  ],
+  "author": "Kevin <505253293@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TingGe/calibration-box/issues"
+  },
+  "homepage": "https://github.com/TingGe/calibration-box#readme"
+}
