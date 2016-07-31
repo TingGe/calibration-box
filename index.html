@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>图片标定</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./node_modules/fabric/dist/fabric.js" charset="utf-8"></script>
+  <script src="./js/calibrationbox.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="vertical-container">
+    <div>
+      <div>
+        <button type="button" id="create">新建</button>
+        <button type="button" id="delete">删除 (快捷键 Del)</button>
+        <button type="button" id="clear">清空</button>
+        <button type="button" id="save">保存</button>
+      </div>
+      <div class="img-container">
+        <canvas id="myCanvas" width="856" height="480"></canvas>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+<script type="text/javascript">
+  function observe(element, eventName, callback) {
+    document.querySelector(element).addEventListener(eventName, callback, false);
+  }
+
+  // 配置所有标定框样式。
+  // 可通过 window['_calibrationbox_'] 或 new CalibrationBox 传参方式使用。
+  var _calibrationbox_ = {
+    strokeStyle: '#0f0',
+    lineWidth: 5
+  };
+  var calibrationbox = new CalibrationBox('myCanvas', {}, '_calibrationbox_');
+
+  // 对 CalibrationBox 实例方法的 create()/delete()/clear() 的调用
+  observe("#create", 'click', function() {
+    calibrationbox.create();
+  });
+  observe("#delete", 'click', function() {
+    calibrationbox.delete();
+  });
+  observe("#clear", 'click', function() {
+    calibrationbox.clear();
+  });
+</script>
+
+</html>
