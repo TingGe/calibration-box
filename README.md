@@ -16,7 +16,9 @@
 
 ## 使用
 
-建议参考 index.html 中代码和注释
+1. 可通过 `npm install calibration-box` 安装。
+2. 调用和使用方式，建议参考 index.html 中代码和注释
+
 
 ## 参考
 
