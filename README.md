@@ -9,7 +9,7 @@
 ## 运行
 
 1. 依赖 [Node](https://nodejs.org/)、[http-server](https://github.com/indexzero/http-server)
-2. 在项目目录执行 `npm install` ，安装 fabric.js、keymaster.js 库
+2. 在项目目录执行 `npm install` ，安装依赖库 [fabric.js](https://github.com/kangax/fabric.js/)、[keymaster.js](https://github.com/madrobby/keymaster) 
 3. 在项目目录执行 `http-server`
 4. 根据 `http-server` 中提示的网址，在浏览器（建议 Chrome ）中访问
 5. 关闭命令窗口即可退出
