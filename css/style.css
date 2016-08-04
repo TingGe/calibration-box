@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 .vertical-container {
-  height: 80vh;
+  height: 100vh;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -11,7 +11,17 @@ body {
   -webkit-justify-content: center;
   justify-content: center;
 }
-
-.img-container {
+.vertical-container div {
+  margin: 0 auto;
+  line-height: 30px;
+}
+.message {
+  margin: auto 20px;
+  padding: 5px;
+  background-color: #0275D8;
+  color: #fff;
+}
+#myCanvas {
+  background-color: #00f;
   background: url(/assets/car-bbox.jpg) no-repeat;
 }
