@@ -1,0 +1,22 @@
+{
+  "name": "calibration-box",
+  "description": "calibrationbox.js is a plugin of Fabric.js",
+  "main": "lib/calibrationbox.js",
+  "authors": [
+    "Kevin <505253293@163.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "calibration",
+    "Fabric.js",
+    "plugin"
+  ],
+  "homepage": "https://github.com/TingGe/calibration-box",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
