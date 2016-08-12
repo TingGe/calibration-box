@@ -16,7 +16,7 @@
 
 ## 使用
 
-1. 可通过 `npm install calibration-box` 安装。
+1. 可通过 `npm install calibration-box` 或 `bower install calibration-box` 安装。
 2. 调用和使用方式，建议参考 index.html 中代码和注释
 
 
