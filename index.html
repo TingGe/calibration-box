@@ -12,6 +12,9 @@
 
 <body>
   <div class="vertical-container">
+    <div class="message">
+      提示
+    </div>
     <div id="controls" class="vertical-align">
       <div>
         <button type="button" id="create">新建矩形标定框(Ctrl + c)</button>
@@ -23,11 +26,8 @@
         <button type="button" id="down">下移(down)</button>
         <button type="button" id="left">左移(left)</button>
         <button type="button" id="right">右移(right)</button>
-        |
-        <!-- <input type="button" id="zoomIn" value="放大" />
-        <input type="button" id="zoomOut" value="缩小" />
+        <!-- |
         <input type="button" id="resetButton" value="实际大小" /> -->
-        <span class="message"></span>
       </div>
       <div id="rubberbandDiv"></div>
       <div class="img-container">
@@ -37,7 +37,7 @@
         <dt>提示：</dt>
         <dd>1. 可直接拖拽生成指定大小矩形标定框</dd>
         <dd>2. 为防止移动和创建事件冲突，不能在已有标定框上创建新标定框，但可以通过创建标定框再移动到期望位置方式实现。</dd>
-        <dd>3. Todo:缩放待完善</dd>
+        <!-- <dd>3. Todo:缩放待完善</dd> -->
       </dl>
     </div>
   </div>

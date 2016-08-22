@@ -6,24 +6,14 @@
     },
     message = document.querySelector(".message");
 
-  var scope = {
-    left: 0,
-    top: 0,
-    width: 0,
-    height: 0
-  };
-
   function observe(element, eventName, callback) {
     document.querySelector(element).addEventListener(eventName, callback, false);
   }
 
   // 配置所有标定框样式。
-  var calibrationbox = new CalibrationBox('myCanvas', {
-    strokeStyle: '#0f0',
-    lineWidth: 5
-  });
+  var calibrationbox = new CalibrationBox('myCanvas', '/assets/car-bbox.jpg');
 
-  // 对 CalibrationBox 实例方法的 create()/delete()/clear() 的调用
+  // 对 CalibrationBox 实例方法 create()/delete()/clear() 的调用
   observe("#create", 'click', function() {
     calibrationbox.create();
   });
@@ -58,48 +48,56 @@
 
   // 位移
   observe("#left", 'click', function() {
-    var flag = calibrationbox.moveTo('left', -10);
-    message.innerHTML = lang[(flag && "success" || "fail")];
+    var flag = calibrationbox.moveTo('left', -1);
+    if (!flag) {
+      message.innerHTML = lang["fail"];
+    }
   });
   observe("#right", 'click', function() {
-    var flag = calibrationbox.moveTo('left', 10);
-    message.innerHTML = lang[(flag && "success" || "fail")];
+    var flag = calibrationbox.moveTo('left', 1);
+    if (!flag) {
+      message.innerHTML = lang["fail"];
+    }
   });
   observe("#up", 'click', function() {
-    var flag = calibrationbox.moveTo('top', -10);
-    message.innerHTML = lang[(flag && "success" || "fail")];
+    var flag = calibrationbox.moveTo('top', -1);
+    if (!flag) {
+      message.innerHTML = lang["fail"];
+    }
   });
   observe("#down", 'click', function() {
-    var flag = calibrationbox.moveTo('top', 10);
-    message.innerHTML = lang[(flag && "success" || "fail")];
+    var flag = calibrationbox.moveTo('top', 1);
+    if (!flag) {
+      message.innerHTML = lang["fail"];
+    }
   });
 
   key('left', function() {
-    var flag = calibrationbox.moveTo('left', -10);
-    message.innerHTML = lang[(flag && "success" || "fail")];
+    var flag = calibrationbox.moveTo('left', -1);
+    if (!flag) {
+      message.innerHTML = lang["fail"];
+    }
   });
   key('right', function() {
-    var flag = calibrationbox.moveTo('left', 10);
-    message.innerHTML = lang[(flag && "success" || "fail")];
+    var flag = calibrationbox.moveTo('left', 1);
+    if (!flag) {
+      message.innerHTML = lang["fail"];
+    }
   });
   key('up', function() {
-    var flag = calibrationbox.moveTo('top', -10);
-    message.innerHTML = lang[(flag && "success" || "fail")];
+    var flag = calibrationbox.moveTo('top', -1);
+    if (!flag) {
+      message.innerHTML = lang["fail"];
+    }
   });
   key('down', function() {
-    var flag = calibrationbox.moveTo('top', 10);
-    message.innerHTML = lang[(flag && "success" || "fail")];
+    var flag = calibrationbox.moveTo('top', 1);
+    if (!flag) {
+      message.innerHTML = lang["fail"];
+    }
   });
 
   // Todo:
-  // observe("#zoomOut", "click", function() {
-  //   calibrationbox.ZoomOut();
-  // });
-  //
-  // observe("#zoomIn", "click", function() {
-  //   calibrationbox.ZoomIn();
-  // });
-  //
   // observe("#resetButton", "click", function() {
   //   calibrationbox.resetZoom();
   // });
@@ -108,26 +106,15 @@
    * 高级功能，供扩展适用
    */
   var canvas = calibrationbox.getCanvas();
-
-  canvas.on('mouse:down', function(evt) {
-    scope.left = evt.e.offsetX;
-    scope.top = evt.e.offsetY;
-  });
-
-  canvas.on('mouse:up', function(evt) {
-    var pos = evt.e,
-      flag = true,
-      width = pos.offsetX - scope.left,
-      height = pos.offsetY - scope.top;
-    canvas.forEachObject(function(obj) {
-      if (obj.active) {
-        flag = false;
-      }
-    })
-    if (flag && width > 0 && height > 0) {
-      scope.width = width;
-      scope.height = height;
-      calibrationbox.create(scope);
-    }
-  });
+  // Note:
+  // 1.已内置 mouse:down mouse:up 创建标定框
+  // var handleScroll = function(evt) {
+  //   var delta = evt.wheelDelta ? evt.wheelDelta / 40 : evt.detail ? -evt.detail : 0;
+  //   if (delta) {
+  //     calibrationbox.zoom(delta, evt);
+  //   };
+  //   return evt.preventDefault() && false;
+  // };
+  // observe(".upper-canvas", 'DOMMouseScroll', handleScroll);
+  // observe(".upper-canvas", 'mousewheel', handleScroll);
 })();

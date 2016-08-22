@@ -2,26 +2,24 @@ body {
   margin: 0;
   padding: 0;
 }
-.vertical-container {
-  height: 100vh;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
 .vertical-container div {
   margin: 0 auto;
   line-height: 30px;
+  width: 856px;
 }
 .message {
-  margin: auto 20px;
   padding: 5px;
   background-color: #0275D8;
   color: #fff;
+  line-height: 30px;
+  text-align: center;
 }
-#myCanvas {
-  background-color: #00f;
-  background: url(/assets/car-bbox.jpg) no-repeat;
+.img-container {
+  border: 1px solid #ff0;
+  width: 856px;
+  height: 480px;
+  overflow: hidden;
+}
+.img-container canvas{
+  position: absolute;
 }
